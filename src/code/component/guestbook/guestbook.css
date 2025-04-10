@@ -1,0 +1,9 @@
+/* Style for each custom dot */
+.slick-dots {
+    transform: scale(1.6);
+}
+  
+.slick-dots li{
+    margin: 0;
+    padding: 0;
+}
