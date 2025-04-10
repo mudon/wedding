@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import { createClient } from "@supabase/supabase-js";
 
 export const ShopeeGiftLink = () => {
   const senaraiBarang = [
@@ -23,7 +24,6 @@ export const ShopeeGiftLink = () => {
 
   const [clickedItemId, setClickedItemId] = useState<number | null>(null);
   const [isTempah, setIsTempah] = useState<boolean>(false);
-
   const { register, handleSubmit } = useForm<Inputs>();
   const linkRef = useRef<HTMLAnchorElement>(null);
 
@@ -39,6 +39,7 @@ export const ShopeeGiftLink = () => {
   };
 
   const tempah: SubmitHandler<Inputs> = async data => {
+    const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
     if (linkRef.current) {
       try {
@@ -48,20 +49,12 @@ export const ShopeeGiftLink = () => {
           itemName: clickedItemId !== null? senaraiBarang[clickedItemId].namaBarang : null
         }
                 
-        const response = await fetch('https://wed-service.onrender.com/hadiah', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(updateData),
+        await supabase.from("Tempahan").insert({
+          id: Date.now().toString(),
+          name: updateData.name,
+          itemName: updateData.itemName,
         });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const result = await response.json();
-
+    
         linkRef.current.click();
         setIsTempah(false);
 

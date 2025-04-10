@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import { FaPenNib } from "react-icons/fa";
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
 type Inputs = {
   name: string;
@@ -19,6 +18,9 @@ export const Ucapan = () => {
   const [isSelected, setIsSelected] = useState(false);
   const { register, handleSubmit } = useForm<Inputs>();
   const windowRef = useRef<HTMLDivElement>(null);
+
+  const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
+
   const handleButtonClick = () => {
     if (!isSelected) {
         setOpenWindow(true); // Open the box only if not selected
@@ -45,37 +47,15 @@ export const Ucapan = () => {
             ucapan: data.ucapan,
             kehadiran: ""
         };
-        
-        // const response = await fetch('https://wed-service.onrender.com/kehadiran', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(updateData),
-        // });
-
-        // if (!response.ok) {
-        //     throw new Error(`HTTP error! status: ${response.status}`);
-        // }
-
-        try {
-          const { error } = await supabase.from("Senarai").insert({
-            id: Date.now().toString(),
-            name: updateData.name,
-            nomborFon: updateData.fon,
-            jumlahKehadiran: parseInt(updateData.jumlah),
-            ucapan: updateData.ucapan,
-            kehadiran: updateData.kehadiran,
-          });
-      
-          if (error) {
-            console.error("Error inserting data:", error);
-            return;
-          }
-
-        } catch (err) {
-          console.error("Unexpected error:", err);
-        }
+          
+        await supabase.from("Senarai").insert({
+          id: Date.now().toString(),
+          name: updateData.name,
+          nomborFon: updateData.fon,
+          jumlahKehadiran: parseInt(updateData.jumlah),
+          ucapan: updateData.ucapan,
+          kehadiran: updateData.kehadiran,
+        });
 
         // const result = await response.json();
     } catch (error) {

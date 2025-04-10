@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "./guestbook.css";
 import "../../../index.css";
 import { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+
 
 // Define the type for a single guest wish entry
 interface GuestWish {
@@ -15,27 +17,28 @@ export const GuestBook = () => {
   // Set the state with the correct type
   const [guestwishList, setGuestwishList] = useState<GuestWish[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://wed-service.onrender.com/kehadiran', {
-          method: 'GET',
-        });
-        const data = await response.json(); // Parse the response as JSON
+  const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
-        // Ensure the fetched data is an array of GuestWish objects
-        if (Array.isArray(data.data)) {
-          setGuestwishList(data.data);
-        } else {
-          console.error("Expected an array but received:", data);
-          setGuestwishList([]); // Fallback to an empty array
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error); // Handle errors
+  const fetchData = async () => {
+    try {
+        const { data } = await supabase
+        .from("Senarai")
+        .select("*") // Adjust columns if needed
+        .order("id", { ascending: false }) // Order by "id" in descending order
+        .limit(6); // Limit to only the latest record        
+      if (Array.isArray(data)) {
+        setGuestwishList(data);
+      } else {
+        console.error("Expected an array but received:", data);
         setGuestwishList([]); // Fallback to an empty array
       }
-    };
+    } catch (error) {
+      console.error("Error fetching data:", error); // Handle errors
+      setGuestwishList([]); // Fallback to an empty array
+    }
+  };
 
+  useEffect(() => {
     fetchData(); // Call the async function
   }, []);
 

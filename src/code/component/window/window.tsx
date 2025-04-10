@@ -2,22 +2,24 @@ import Swal from 'sweetalert2';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Animate } from "../animate/animate";
 import { Kehadiran } from "../footer/buttonSelection/buttonSelection"
+import { createClient } from "@supabase/supabase-js";
 
 type Props = {
     isOpen: boolean;
     setOpenWindow: React.Dispatch<React.SetStateAction<boolean>>;
     kehadiran: Kehadiran | null;
 }
+type Inputs = {
+    name: string;
+    fon: string;
+    jumlah: string;
+    ucapan: string;
+};
 
 export const Window = ({ isOpen, setOpenWindow, kehadiran }: Props) => {
-    type Inputs = {
-        name: string;
-        fon: string;
-        jumlah: number;
-        ucapan: string;
-    };
-
     const { register, handleSubmit } = useForm<Inputs>();
+
+    const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
     const onSubmit: SubmitHandler<Inputs> = async data => {
         try {
@@ -38,19 +40,14 @@ export const Window = ({ isOpen, setOpenWindow, kehadiran }: Props) => {
             if( kehadiran === Kehadiran.Hadir )
                 updateData.kehadiran = "hadir"
 
-            const response = await fetch('https://wed-service.onrender.com/kehadiran', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(updateData),
+            await supabase.from("Senarai").insert({
+                id: Date.now().toString(),
+                name: updateData.name,
+                nomborFon: updateData.fon,
+                jumlahKehadiran: parseInt(updateData.jumlah),
+                ucapan: updateData.ucapan,
+                kehadiran: updateData.kehadiran,
             });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const result = await response.json();
         } catch (error) {
             Swal.fire({
                 icon: "error",
