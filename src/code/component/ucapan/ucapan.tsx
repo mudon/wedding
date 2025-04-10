@@ -3,8 +3,8 @@ import {  useEffect, useRef, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { FaPenNib } from "react-icons/fa";
+import { createClient } from "@supabase/supabase-js";
 
-const { createClient } = require("@supabase/supabase-js");
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
 type Inputs = {
