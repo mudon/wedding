@@ -24,4 +24,5 @@ jobs:
       - name: Build
         env:
           VITE_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          VITE_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
         run: npm run build
