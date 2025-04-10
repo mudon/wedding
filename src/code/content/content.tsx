@@ -56,7 +56,7 @@ function Content() {
 
       // Handle click outside of the window
   useEffect(() => {
-   console.log("hii,", import.meta.env.VITE_API_KEY);
+   console.log("hii,", import.meta.env.SUPABASE_KEY);
    
   }, []);
 
