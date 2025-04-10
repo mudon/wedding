@@ -10,8 +10,6 @@ import img4 from '../../assets/engaged/photo_2025-01-07_20-59-53.jpg';
 import wedLine from '../../assets/weedingLine.png';
 import { GuestBook } from '../component/guestbook/guestbook';
 import { Ucapan } from '../component/ucapan/ucapan';
-import { LuCalendarHeart } from 'react-icons/lu';
-import ucapanImg from '../../assets/border-ucapan.png'
 import { GuestWishProvider } from '../data-management/guestwishlist/guestwishlist';
 
 function Content() {
@@ -46,13 +44,6 @@ function Content() {
     img4
   ];
 
-  const buttonUcapan = {
-      iconImage: <LuCalendarHeart />,
-      title: "Ucapan",
-      item: 10,
-      childNode: <Ucapan />,
-    }
-
   return (
     <>
       <section className="w-[28rem] flex justify-center items-center pt-[2rem]" style={{ backgroundImage: `url(${backgroundLow})`, backgroundSize: '100%', backgroundPosition: "center" }} >
@@ -66,11 +57,11 @@ function Content() {
               <p>Assalamualaikum wbt & salam sejahtera</p>
             </div>
             <div className='flex justify-center items-center flex-col scroll-animation invisible-animation'>
-              <p className='text-center font-medium text-2xl custom-font-cinzel'>RAZALI</p>
-              <p className='text-lg default-font'>(Bapa Pengantin Perempuan)</p>
+              <p className='text-center font-medium text-2xl custom-font-cinzel'>Hishamuddin</p>
+              <p className='text-lg default-font'>(Bapa Pengantin Lelaki(Allahyarham))</p>
               <p className='default-font'>&</p>
-              <p className='text-center font-medium text-2xl custom-font-cinzel'>MARYAM</p>
-              <p className='text-lg default-font'>(Ibu Pengantin Perempuan)</p>
+              <p className='text-center font-medium text-2xl custom-font-cinzel'>Salwuan</p>
+              <p className='text-lg default-font'>(Ibu Pengantin Lelaki)</p>
             </div>
             <div className='flex justify-center items-center flex-col scroll-animation invisible-animation'>
               <p className='text-center custom-font-cinzel'>Dengan penuh kesyukuran, kami menjemput</p>
@@ -92,8 +83,8 @@ function Content() {
         <div className='w-[240px] flex justify-center items-center flex-col gap-y-7'>
           <div className='flex justify-center items-center flex-col scroll-animation invisible-animation'>
             <p className='text-xl font-medium custom-font-cinzel'>Sabtu</p>
-            <p className="text-xl font-medium custom-font-cinzel">03 May 2025</p>
-            <p className='text-[15px] custom-font-cinzel mb-7'>5 Zulkaedah 1446H</p>
+            <p className="text-xl font-medium custom-font-cinzel">10 May 2025</p>
+            <p className='text-[15px] custom-font-cinzel mb-7'>12 Zulkaedah 1446H</p>
             <div className='w-[13rem] scroll-animation invisible-animation'>
               <img src={wedLine}/>
             </div>
@@ -106,12 +97,12 @@ function Content() {
             <div className='flex justify-center items-center flex-col gap-3 scroll-animation invisible-animation'>
                 <p className='font-bold default-font custom-font-cinzel'>ATUR CARA MAJLIS</p>
               <div className='flex justify-center items-center flex-col'>
-                <p className='text-center default-font'>Jamuan Makan:</p>
-                <p>11.00 pagi - 5.00 petang</p>
+                <p className='text-center default-font'>Ketibaan pengantin perempuan:</p>
+                <p>12.00 pagi</p>
               </div>
               <div className='flex justify-center items-center flex-col scroll-animation invisible-animation'>
                 <p className='text-center default-font'>Jamuan Makan:</p>
-                <p>11.00 pagi - 5.00 petang</p>
+                <p>10.00 pagi - 5.00 petang</p>
               </div>
             </div>
             <div className='w-[13rem] scroll-animation invisible-animation'>

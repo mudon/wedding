@@ -19,13 +19,13 @@ export const Calendar = () => {
     return `${year}${month}${day}T${hours}${minutes}${seconds}+0800`;
   };
 
-  const startDate = new Date(2025, 4, 3, 11, 0);
-  const endDate = new Date(2025, 4, 3, 16, 0);
+  const startDate = new Date(2025, 4, 10, 11, 0);
+  const endDate = new Date(2025, 4, 10, 17, 0);
 
   const formattedStartDate = formatDateToGoogleCalendar(startDate);
   const formattedEndDate = formatDateToGoogleCalendar(endDate);
   const title = "Wedding of Hazim & Yana";
-  const location = "Dewan Jubli Perak Kuala Kangsar, Jalan Raja Idris, 33000 Kuala Kangsar, Perak, 10c, Persiaran Perbandaran, Bandar Baru, 33000 Kuala Kangsar, Perak";
+  const location = "Sri Beta Event Hall";
 
   const openGoogleCalendar = () => {
     const params = new URLSearchParams({

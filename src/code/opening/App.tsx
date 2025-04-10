@@ -72,7 +72,7 @@ function App() {
               }}
             >
               <p className="default-font text-md">SABTU</p>
-              <p className="default-font text-md">03 FEBRUARI 2025</p>
+              <p className="default-font text-md">10 FEBRUARI 2025</p>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ const centerItem = "w-full flex justify-center items-center";
 const centerCol = `${centerItem} flex-col`;
 
 export const Location = () => {
-  const location = "Dewan Jubli Perak Kuala Kangsar, Jalan Raja Idris, 33000 Kuala Kangsar, Perak, 10c, Persiaran Perbandaran, Bandar Baru, 33000 Kuala Kangsar, Perak";
+  const location = "Sri Beta Event Hall";
 
   function openGoogleMap(){
     const locationUrl = `https://www.google.com/maps?q=${encodeURIComponent(location)}`
