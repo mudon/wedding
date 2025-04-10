@@ -52,13 +52,6 @@ function Content() {
       childNode: <Ucapan />,
     }
 
-      // Handle click outside of the window
-  useEffect(() => {
-   console.log("hii,", import.meta.env.VITE_SUPABASE_KEY);
-   console.log("wee,", import.meta.env.VITE_SUPABASE_URL);
-   
-  }, []);
-
   return (
     <>
       <section className="w-[28rem] flex justify-center items-center pt-[2rem]" style={{ backgroundImage: `url(${backgroundLow})`, backgroundSize: '100%', backgroundPosition: "center" }} >
