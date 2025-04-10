@@ -22,8 +22,6 @@ function Content() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log(entry);
-          
           if (entry.isIntersecting) {
             entry.target.classList.add("fade-in");
             setBackgroundImageVisible(true);
@@ -57,6 +55,7 @@ function Content() {
       // Handle click outside of the window
   useEffect(() => {
    console.log("hii,", import.meta.env.VITE_SUPABASE_KEY);
+   console.log("wee,", import.meta.env.VITE_SUPABASE_URL);
    
   }, []);
 

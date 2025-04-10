@@ -22,7 +22,6 @@ export const GuestBook = () => {
           method: 'GET',
         });
         const data = await response.json(); // Parse the response as JSON
-        console.log(data.data); // Log the fetched data
 
         // Ensure the fetched data is an array of GuestWish objects
         if (Array.isArray(data.data)) {

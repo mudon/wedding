@@ -61,8 +61,6 @@ export const ShopeeGiftLink = () => {
         }
 
         const result = await response.json();
-        console.log('Success:', result);
-        
 
         linkRef.current.click();
         setIsTempah(false);

@@ -57,7 +57,6 @@ export const Ucapan = () => {
         }
 
         const result = await response.json();
-        console.log('Success:', result);            
     } catch (error) {
         Swal.fire({
             icon: "error",
