@@ -12,6 +12,7 @@ import { GuestBook } from '../component/guestbook/guestbook';
 import { Ucapan } from '../component/ucapan/ucapan';
 import { LuCalendarHeart } from 'react-icons/lu';
 import ucapanImg from '../../assets/border-ucapan.png'
+import { GuestWishProvider } from '../data-management/guestwishlist/guestwishlist';
 
 function Content() {
   const [backgroundImageVisible, setBackgroundImageVisible] = useState(false); 
@@ -140,8 +141,10 @@ function Content() {
       <section className="w-[28rem] flex flex-col items-center pt-7 gap-5" style={{ backgroundImage: `url(${backgroundImageVisible? backgroundLow : ""})`, backgroundSize: '100%', backgroundPosition: "center" }} >
         <div className='font-bold custom-font-cinzel'>GUESTBOOK</div>
         <div className='w-[240px] flex justify-center items-center flex-col gap-y-7'>
-          <GuestBook/> 
-          <Ucapan/>
+          <GuestWishProvider>
+            <GuestBook/> 
+            <Ucapan/>
+          </GuestWishProvider>
           <div className='w-[13rem] scroll-animation invisible-animation'>
               <img src={wedLine}/>
           </div>
