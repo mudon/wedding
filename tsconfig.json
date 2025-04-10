@@ -24,7 +24,7 @@
 
     /* Module Resolution */
     "typeRoots": ["node_modules/@types", "node_modules"], // Ensure types are resolved from node_modules
-    "types": ["sweetalert2", "framer-motion"] // Explicitly mention "framer-motion" here
+    "types": ["sweetalert2", "framer-motion", "node"] // Explicitly mention "framer-motion" here
   },
   "include": ["src"]
 }
