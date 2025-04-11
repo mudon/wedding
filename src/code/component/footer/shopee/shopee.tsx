@@ -10,16 +10,40 @@ export const ShopeeGiftLink = () => {
   const senaraiBarang = [
     {
       id: 0,
-      namaBarang: "ELBA STAINLESS STEEL/PEMANAS AIR THERMOPOT",
+      namaBarang: "Thermopot",
       linkBarang:
-        "https://shopee.com.my/product/275298889/14100201304?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBMFlyTE9RS0wzMlYyS01TMmFLMDA2WXo2S0JSMmc5amhJekZEUXZsQXJvT0t5alpVM000OWJMOXhhOUk2OVlCS05QbGhETlZ2RGFHNnEwdFNURVhVL1RkSWdmL1ZhSTRPL29sUkJudHROaUNBPT0&gad_source=1&gclid=Cj0KCQiAyoi8BhDvARIsAO_CDsB301N-ybYeBJBdoVmRfV3xJZdMKKpE0067_QcFeQ19LOrt8PRTudIaAid-EALw_wcB", // Example link
-      pathGambarBarang: "/shopeeImg/pemanasAir.webp",
+        "https://shopee.com.my/product/161002832/2576528242?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkWVp3RFo3Mkw5czd4Z0hzdEF1WVFia1RMeEZ1cDRjSHo2V0lxS0NDNWxPM0ErU0V1WDhvd0V1ZEtrSUNTVTl2bDdzb3kralpHTDg5bUxzUFVFYzQxOVllNG4vNFl2bVAwQ3JpbXI5RDVpS3E&gad_source=1&gclid=Cj0KCQjw2N2_BhCAARIsAK4pEkV6FbSiAbpKxeh3MsCL3rtauM379mOmXMHKlZP7VG5eIYpJY6utj98aAvmlEALw_wcB", // Example link
+      pathGambarBarang: "./shopeeImg/thermopot.png",
     },
     {
       id: 1,
-      namaBarang: "Another Item",
-      linkBarang: "https://www.example.com/item2", // Example link
-      pathGambarBarang: "./item2.jpg",
+      namaBarang: "Set Pisau",
+      linkBarang: "https://shopee.com.my/product/450829972/20869202133?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBMGpGS0Uxd2ZtYzdsNHBLTWw3dlFEVWhRT3VMdGd1ZHl4TEZOV3NXd3hZM2hyclFpZmx4bEdyOGoybU9SYU4xWkVLMXF4NHNlcWVoWmlZbmZlT0NVNVYzZTluQXNmc1NyRWNwRUpJTGpnN0hnPT0&gad_source=1&gclid=Cj0KCQjw2N2_BhCAARIsAK4pEkV9LjevGNRd6Gbk15qUFodjJk94DboqX1Q9-Bhtk0WptY_V4kVLgC4aAuHvEALw_wcB", // Example link
+      pathGambarBarang: "./shopeeImg/set-pisau.png",
+    },
+    {
+      id: 2,
+      namaBarang: "Set Pinggan",
+      linkBarang: "https://shopee.com.my/product/254358663/3932487396?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkWVp3RFo3Mkw5czd4Z0hzdEF1WVFia0E2QUpCbXpNeXEvTDZta0RIMlpoRnFaa1dUUDZheWdQUkR2S0NKL3FGR3ZDWkN5TTZHeVBhVkluR213ajcwT0RZdXA5dUdXQXdBQm1HcUpsdGF4d28&gad_source=1&gclid=Cj0KCQjw2N2_BhCAARIsAK4pEkUftbti0Tui4MqxjjJiWumGYEu9aspB95sTQ13nsjtHQ6TpKz73PLIaAq4PEALw_wcB", // Example link
+      pathGambarBarang: "./shopeeImg/set-pinggan.png",
+    },
+    {
+      id: 3,
+      namaBarang: "Vacuum Stick",
+      linkBarang: "https://shopee.com.my/product/154039251/6833166779?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkWVp3RFo3Mkw5czd4Z0hzdEF1WVFibVl3cFlpakdhSXlGUnJoQ0hiWk42MGpIekFWVVVhbVBCUFV2T3hpQmY1TFV0RFlOaVRYYzA3UkIybDRuMlNSYU1oZk1QcjNBbTNEY1ZsK1pVRGdERCs&gad_source=1&gclid=Cj0KCQjw2N2_BhCAARIsAK4pEkUEz8PupPqTS6J0IuPokeHceI5nP89tMVc8VqWoW83xLSRFhyMeOz8aAnl7EALw_wcB", // Example link
+      pathGambarBarang: "./shopeeImg/vacuum-stick.png",
+    },
+    {
+      id: 4,
+      namaBarang: "Foldable Broom",
+      linkBarang: "https://shopee.com.my/product/595961616/22352056017?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVHQ3ZkZSUTMrR3pBWmZZNzdrcnRBM1dLK1NROGxMUkpMUm9OVEpRcEpVVyt1RVNwZnE4aWx5QUVvbzVIMWNwbTdKN0tMU3VnYU5XUDdJQndES3kxSUduc0d5S2UxRGJTaUJlSjJ1ZDZBS1c0N243WFRrVHo0Uk90ZTJrcEpHWElBPT0&gad_source=1&gclid=Cj0KCQjw2N2_BhCAARIsAK4pEkU8oRoNa8wgPRoBnDVG3tgoe8J-Kg-ez5LHgXJlGOHs66lD3KOA4NMaAlWqEALw_wcB", // Example link
+      pathGambarBarang: "./shopeeImg/penyapu.png",
+    },
+    {
+      id: 5,
+      namaBarang: "Koleksi Pan",
+      linkBarang: "https://shopee.com.my/product/4856352/5820735266?gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkVEg0SDd3VWo1MDQyT052d3EvY1B4WXdMd0JWUkRIaGo1c0czQ2tDTjF3M2lyT2tRQ2p3UWQ3Y3lnQW4wU0pnSHdMdTNKd1ZCTlBRYmttdExPWUZiaE92SWFIVWt2THhGUjU0Zm1qaHdxeU0&gad_source=1&gclid=Cj0KCQjw2N2_BhCAARIsAK4pEkXgsLHA8RSduqOBRHD09NZNgRdT4hztl8NI0e2s42xoZ10n0RM4z9saAtpKEALw_wcB", // Example link
+      pathGambarBarang: "./shopeeImg/set-kuali.png",
     },
   ];
 
