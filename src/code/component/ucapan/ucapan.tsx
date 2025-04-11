@@ -106,10 +106,10 @@ export const Ucapan = () => {
           initial={{ opacity: 0, y: 100 }} // Start below the screen with 0 opacity
           animate={{ opacity: 1, y: 0 }} // Animate to the normal position with full opacity
           exit={{ opacity: 0, y: 100 }} // Animate back to the bottom with 0 opacity on exit
-          className="absolute inset-y-[187em]"
+          className="absolute inset-y-[185em]"
         >
           <div
-            className="h-[29rem] w-[21rem] relative bottom-[30rem] text-black bg-white rounded-lg"
+            className="h-[29rem] w-[21rem] relative bottom-[30rem] text-black bg-white rounded-lg z-1"
             ref={windowRef}
           >
             <form
