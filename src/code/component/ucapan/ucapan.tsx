@@ -109,7 +109,8 @@ export const Ucapan = () => {
           className="absolute inset-y-[185em]"
         >
           <div
-            className="h-[29rem] w-[21rem] relative bottom-[30rem] text-black bg-white rounded-lg z-1"
+            className="h-[29rem] w-[21rem] relative bottom-[30rem] text-black bg-white rounded-lg"
+            style={{ zIndex: 1 }}
             ref={windowRef}
           >
             <form
