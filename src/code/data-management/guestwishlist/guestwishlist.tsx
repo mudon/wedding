@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 import { createClient } from "@supabase/supabase-js";
 
 // Type of one wish
@@ -14,7 +20,9 @@ type GuestWishContextType = {
 };
 
 // Create context
-const GuestWishContext = createContext<GuestWishContextType | undefined>(undefined);
+const GuestWishContext = createContext<GuestWishContextType | undefined>(
+  undefined
+);
 
 export const GuestWishProvider = ({ children }: { children: ReactNode }) => {
   const [guestwishList, setGuestwishList] = useState<GuestWish[]>([]);
@@ -46,27 +54,31 @@ export const GuestWishProvider = ({ children }: { children: ReactNode }) => {
     fetchData();
 
     const channel = supabase
-    .channel('guestbook_channel')
-    .on(
-        'postgres_changes',
+      .channel("guestbook_channel")
+      .on(
+        "postgres_changes",
         {
-          event: 'INSERT', 
-          schema: 'public',
+          event: "INSERT",
+          schema: "public",
           table: "Senarai",
         },
-        payload => {
-        const newData: GuestWish = {name: payload.new.name, ucapan: payload.new.ucapan};
+        (payload) => {
+          const newData: GuestWish = {
+            name: payload.new.name,
+            ucapan: payload.new.ucapan,
+          };
 
-        setGuestwishList(prev => {
+          setGuestwishList((prev) => {
             const updatedList = [newData, ...prev]; // Add the new wish
             return updatedList.slice(0, 6); // Keep only the 6 latest entries
-        });
-    })
-    .subscribe();
+          });
+        }
+      )
+      .subscribe();
 
     return () => {
-        supabase.removeChannel(channel);
-      };
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   return (

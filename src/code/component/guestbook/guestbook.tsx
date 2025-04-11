@@ -5,7 +5,6 @@ import "./guestbook.css";
 import "../../../index.css";
 import { useGuestWish } from "../../data-management/guestwishlist/guestwishlist";
 
-
 export const GuestBook = () => {
   const { guestwishList } = useGuestWish();
 
@@ -25,7 +24,9 @@ export const GuestBook = () => {
         <Slider {...settings}>
           {guestwishList.map((guest: any, index) => (
             <div key={index} className="text-center mb-5">
-              <p className="whitespace-normal break-words custom-font-marck-script text-xl">{guest.ucapan}</p>
+              <p className="whitespace-normal break-words custom-font-marck-script text-xl">
+                {guest.ucapan}
+              </p>
               <p className="pt-[3px]">
                 oleh <span className="font-semibold">{guest.name}</span>
               </p>

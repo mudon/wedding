@@ -1,4 +1,7 @@
-import { useButtonSelection, BottomNavBarItem } from "./buttonSelection/buttonSelection";
+import {
+  useButtonSelection,
+  BottomNavBarItem,
+} from "./buttonSelection/buttonSelection";
 import { IconButton } from "../iconButton/iconButton";
 import { PiListHeart } from "react-icons/pi";
 import { LuCalendarHeart } from "react-icons/lu";
@@ -56,12 +59,15 @@ export const Footer = () => {
       title: "Wish List",
       item: BottomNavBarItem.SHOPEE,
       childNode: <ShopeeGiftLink />,
-    }
+    },
   ];
 
   return (
-    <div className="fixed bottom-0 p-3 h-[4rem] bg-[#cf5951] text-white flex justify-around items-center rounded-[30px] w-[25rem]" style={{ boxShadow: ' 0 0 7px 3px rgba(0, 0, 0, 0.6)' }}>
-    {/* <div className="fixed bottom-0 h-[4rem] w-full max-w-[400px] bg-[#cf5951] text-white flex justify-around items-center rounded-[30px] px-4" style={{ boxShadow: ' 0 0 7px 3px rgba(0, 0, 0, 0.6)' }}> */}
+    <div
+      className="fixed bottom-0 p-3 h-[4rem] bg-[#cf5951] text-white flex justify-around items-center rounded-[30px] w-[25rem]"
+      style={{ boxShadow: " 0 0 7px 3px rgba(0, 0, 0, 0.6)" }}
+    >
+      {/* <div className="fixed bottom-0 h-[4rem] w-full max-w-[400px] bg-[#cf5951] text-white flex justify-around items-center rounded-[30px] px-4" style={{ boxShadow: ' 0 0 7px 3px rgba(0, 0, 0, 0.6)' }}> */}
       {listNavButton.map((navButton) => (
         <IconButton
           key={navButton.item}

@@ -1,4 +1,4 @@
-import qrBank from "/hongleongqr.png"
+import qrBank from "/hongleongqr.png";
 
 export const TnG = () => {
   const colCenter = "flex justify-center items-center flex-col";
@@ -14,13 +14,17 @@ export const TnG = () => {
           </div>
         </div>
         <div>
-          <p className="text-center mb-1" >Akaun Bank</p>
+          <p className="text-center mb-1">Akaun Bank</p>
           <div className="bg-gray-100 text-center py-1 px-10 rounded-lg">
             <span>29051057003</span>
           </div>
         </div>
         <div>
-          <img alt="qrBank" src={qrBank} className="h-[260px] w-[260px] border-2 border-gray-100"></img>
+          <img
+            alt="qrBank"
+            src={qrBank}
+            className="h-[260px] w-[260px] border-2 border-gray-100"
+          ></img>
         </div>
       </div>
     </div>

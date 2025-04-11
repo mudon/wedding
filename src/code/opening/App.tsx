@@ -1,18 +1,17 @@
-import './App.css';
-import '../../index.css';
-import background from '/background/INVITATION WEDDING CARD OPENING.jpg';
+import "./App.css";
+import "../../index.css";
+import background from "/background/INVITATION WEDDING CARD OPENING.jpg";
 
 function App() {
-
   return (
     <>
       <div
-      className="w-[28rem] min-h-screen bg-black"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "100% 100%",
-        backgroundPosition: "center",
-      }}
+        className="w-[28rem] min-h-screen bg-black"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "100% 100%",
+          backgroundPosition: "center",
+        }}
       >
         <div className="absolute left-0 flex justify-center items-center flex-col h-full w-full">
           <div className="relative flex justify-center items-center flex-col gap-3 h-full w-[270px]">
@@ -27,9 +26,9 @@ function App() {
             >
               RENJANA PUJANGGA BERTAUT
             </p>
-            
+
             {/* Second element */}
-            <div className='flex flex-col items-center'>
+            <div className="flex flex-col items-center">
               <div
                 style={{
                   opacity: 0, // Start as invisible
@@ -76,9 +75,9 @@ function App() {
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
