@@ -1,11 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./countdown.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 const CountdownTimer = () => {
   const [seconds, setSeconds] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
   const [hours, setHours] = useState<number>(0);
   const [days, setDays] = useState<number>(0);
+
+  const formatTime = (time: number) => {
+    setSeconds(Math.floor((time / 1000) % 60));
+    setMinutes(Math.floor((time / (1000 * 60)) % 60));
+    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
+    setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
+  };
 
   useEffect(() => {
     const countdownInterval = setInterval(() => {
@@ -17,60 +25,107 @@ const CountdownTimer = () => {
       return () => clearInterval(countdownInterval);
     }, 1000);
   }, []);
+  // const [number, setNumber] = useState(0);
+  // const [prevNumber, setPrevNumber] = useState<number | null>(null);
+  // const [isAnimating, setIsAnimating] = useState(false);
 
-  const formatTime = (time: number) => {
-    setSeconds(Math.floor((time / 1000) % 60));
-    setMinutes(Math.floor((time / (1000 * 60)) % 60));
-    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
-    setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-  };
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setNumber((n) => n + 1);
+  //   }, 1000);
+
+  //   return () => clearInterval(interval);
+  // }, [number]);
 
   return (
     <div className="flex justify-evenly flex-wrap gap-x-20">
-      {/* <div className="text-center text-[2em] default-font">
-        {days.toString().padStart(2, "0")}
-        <span className="block text-xl custom-font-cinzel">Hari</span>
-      </div>
-      <div className="text-center text-[25px] default-font">
-        <span>{hours.toString().padStart(2, "0")}</span>
-        <span className="block text-xl custom-font-cinzel">Jam</span>
-      </div>
-      <div className="text-center text-[25px] default-font">
-        {minutes.toString().padStart(2, "0")}
-        <span className="block text-xl custom-font-cinzel">Minit</span>
-      </div>
-      <div className="text-center text-[25px] default-font">
-        {seconds.toString().padStart(2, "0")}
-        <span className="block text-xl custom-font-cinzel">Saat</span>
-      </div> */}
 
-      <div className="grid grid-flow-col gap-2 text-center auto-cols-max">
-        <div className="flex flex-col p-2 rounded-md custom-font-cinzel bg-[#c9a87b] p-2 shadow-md shadow-black/30">
-          <span className="countdown font-mono text-2xl">
-            <span style={{"--value":15} as React.CSSProperties} aria-live="polite">{days.toString().padStart(2, "0")}</span>
-          </span>
+      <div className="grid grid-flow-col text-center auto-cols-max bg-[#c9a87b] rounded-md p-2 shadow-md shadow-black/30">
+        <div className="flex flex-col p-1 custom-font-cinzel ">
+            <div className="flex flex-row font-mono text-2xl">
+              <motion.div
+                key={days.toString().padStart(2, "0")}
+                initial={{ opacity: 1, y: -15 }} // Start slightly below
+                animate={{ opacity: 1, y: 0 }} // Move up to the desired position
+                // exit={{ opacity: 0, y: 100 }} // Move back down on exit
+                transition={{
+                  x: { type: "spring", bounce: 0 }, // Remove bounce
+                }}
+              >
+                <span aria-live="polite">{days.toString().padStart(2, "0")}</span>
+              </motion.div>
+              <span className="ml-1">:</span>
+            </div>
           days
         </div>
-        <div className="flex flex-col p-2 rounded-md custom-font-cinzel bg-[#c9a87b] p-2 shadow-md shadow-black/30">
-          <span className="countdown font-mono text-2xl">
-            <span style={{"--value":10} as React.CSSProperties} aria-live="polite">{hours.toString().padStart(2, "0")}</span>
-          </span>
+        <div className="flex flex-col p-1 custom-font-cinzel">
+            <div className="flex flex-row font-mono text-2xl">
+              <motion.div
+                key={hours.toString().padStart(2, "0")}
+                initial={{ opacity: 1, y: -15 }} // Start slightly below
+                animate={{ opacity: 1, y: 0 }} // Move up to the desired position
+                // exit={{ opacity: 0, y: 100 }} // Move back down on exit
+                transition={{
+                  x: { type: "spring", bounce: 0 }, // Remove bounce
+                }}
+              >
+                <span aria-live="polite">{hours.toString().padStart(2, "0")}</span>
+              </motion.div>
+              <span className="ml-1">:</span>
+            </div>
           hours
         </div>
-        <div className="flex flex-col p-2 rounded-md custom-font-cinzel bg-[#c9a87b] p-2 shadow-md shadow-black/30">
-          <span className="countdown font-mono text-2xl">
-            <span style={{"--value":24} as React.CSSProperties } aria-live="polite">{minutes.toString().padStart(2, "0")}</span>
-          </span>
+        <div className="flex flex-col p-1 custom-font-cinzel">
+            <div className="flex flex-row font-mono text-2xl">
+              <motion.div
+                key={minutes.toString().padStart(2, "0")}
+                initial={{ opacity: 1, y: -15 }} // Start slightly below
+                animate={{ opacity: 1, y: 0 }} // Move up to the desired position
+                transition={{
+                  x: { type: "spring", bounce: 0 }, // Remove bounce
+                }}
+              >
+                <span aria-live="polite">{minutes.toString().padStart(2, "0")}</span>
+              </motion.div>
+              <span className="ml-1">:</span>
+            </div>
           min
         </div>
-        <div className="flex flex-col p-2 rounded-md custom-font-cinzel bg-[#c9a87b] p-2 shadow-md shadow-black/30">
-          <span className="countdown font-mono text-2xl">
-            <span style={{"--value":59} as React.CSSProperties } aria-live="polite">{seconds.toString().padStart(2, "0")}</span>
-          </span>
+        <div className="flex flex-col p-1 custom-font-cinzel number-container">
+            <div className="flex flex-row font-mono text-2xl">
+            <motion.div
+              key={seconds.toString().padStart(2, "0")}
+              initial={{ opacity: 1, y: -15 }} // Start slightly below
+              animate={{ opacity: 1, y: 0 }} // Move up to the desired position
+              transition={{
+                x: { type: "spring", bounce: 0 }, // Remove bounce
+              }}
+            >
+              <span aria-live="polite">{seconds.toString().padStart(2, "0")}</span>
+            </motion.div>
+            </div>
           sec
         </div>
       </div>
+
     </div>
+
+    // <div className="relative w-24 h-12 text-3xl font-bold overflow-hidden text-center">
+    //   <AnimatePresence>
+    //       <motion.div
+    //         key={number}
+    //         className="absolute inset-0"
+    //         initial={{ opacity: 0, y: 100 }} // Start slightly below
+    //         animate={{ opacity: 1, y: 0 }} // Move up to the desired position
+    //         exit={{ opacity: 0, y: 100 }} // Move back down on exit
+    //         transition={{
+    //           x: { type: "spring", bounce: 0 }, // Remove bounce
+    //         }}
+    //       >
+    //         {number}
+    //       </motion.div>
+    //   </AnimatePresence>
+    // </div>
   );
 };
 
