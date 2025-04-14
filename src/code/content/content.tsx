@@ -131,7 +131,7 @@ function Content() {
               </p>
               <div className="flex justify-center items-center flex-col">
                 <p className="text-center default-font">
-                  Ketibaan pengantin perempuan:
+                  Ketibaan pengantin:
                 </p>
                 <p>12.00 pagi</p>
               </div>
