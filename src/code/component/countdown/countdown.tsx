@@ -18,7 +18,7 @@ const CountdownTimer = () => {
   useEffect(() => {
     const countdownInterval = setInterval(() => {
       const currentTime = new Date().getTime();
-      const eventTime = new Date("May 03, 2025 12:30:00").getTime();
+      const eventTime = new Date("May 10, 2025 12:00:00").getTime();
       let remainingTime = eventTime - currentTime;
 
       formatTime(remainingTime);

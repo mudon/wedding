@@ -76,7 +76,7 @@ function Content() {
                 Dengan penuh kesyukuran, kami menjemput
               </p>
               <p className="text-center custom-font-cinzel">
-                Dato' | Datin | Tuan | Puan | Encik | Cik
+                Dato' | Datin | Tuan | Puan | Encik | Cik | Keluarga
               </p>
               <p className="text-center custom-font-cinzel">
                 ke majlis perkahwinan anakanda kami
@@ -123,7 +123,7 @@ function Content() {
           <div className="flex justify-center items-center flex-col gap-y-7 scroll-animation invisible-animation">
             <div className="flex justify-center items-center flex-col gap-3 scroll-animation invisible-animation">
               <p className="font-bold custom-font-cinzel">LOKASI MAJLIS</p>
-              <p className="w-[15rem] text-center default-font">Pasir Mas</p>
+              <p className="w-[15rem] text-center default-font">Dewan Beta Hall</p>
             </div>
             <div className="flex justify-center items-center flex-col gap-3 scroll-animation invisible-animation">
               <p className="font-bold default-font custom-font-cinzel">
@@ -137,7 +137,7 @@ function Content() {
               </div>
               <div className="flex justify-center items-center flex-col scroll-animation invisible-animation">
                 <p className="text-center default-font">Jamuan Makan:</p>
-                <p>10.00 pagi - 5.00 petang</p>
+                <p>11.00 pagi - 4.00 petang</p>
               </div>
             </div>
             <div className="w-[13rem] scroll-animation invisible-animation">
