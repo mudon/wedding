@@ -7,7 +7,8 @@ export enum BottomNavBarItem {
   Call = 3,
   TNG = 4,
   RVSP = 5,
-  SHOPEE = 6
+  SHOPEE = 6,
+  Wishlist = 7
 }
 
 export enum Kehadiran {

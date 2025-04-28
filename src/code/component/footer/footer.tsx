@@ -15,6 +15,8 @@ import { TnG } from "./tng/tng";
 import { Call } from "./call/call";
 import { RVSP } from "./rsvp/rvsp";
 import { ShopeeGiftLink } from "./shopee/shopee";
+import { PiListHeartBold } from "react-icons/pi";
+import { Wishlist } from "./wishlist/wishlist";
 
 export const Footer = () => {
   const { buttonSelection, setButtonSelection } = useButtonSelection();
@@ -42,24 +44,30 @@ export const Footer = () => {
       item: BottomNavBarItem.Call,
       childNode: <Call />,
     },
+    // {
+    //   iconImage: <GiCardPlay />,
+    //   title: "Gift",
+    //   item: BottomNavBarItem.TNG,
+    //   childNode: <TnG />,
+    // },
     {
-      iconImage: <GiCardPlay />,
-      title: "Gift",
-      item: BottomNavBarItem.TNG,
-      childNode: <TnG />,
+      iconImage: <PiListHeartBold />,
+      title: "Ucapan",
+      item: BottomNavBarItem.Wishlist,
+      childNode: <Wishlist />,
     },
-    {
-      iconImage: <TbMessage2Up />,
-      title: "Rvsp",
-      item: BottomNavBarItem.RVSP,
-      childNode: <RVSP />,
-    },
-    {
-      iconImage: <PiListHeart />,
-      title: "Wish List",
-      item: BottomNavBarItem.SHOPEE,
-      childNode: <ShopeeGiftLink />,
-    },
+    // {
+    //   iconImage: <TbMessage2Up />,
+    //   title: "Rvsp",
+    //   item: BottomNavBarItem.RVSP,
+    //   childNode: <RVSP />,
+    // },
+    // {
+    //   iconImage: <PiListHeart />,
+    //   title: "Wish List",
+    //   item: BottomNavBarItem.SHOPEE,
+    //   childNode: <ShopeeGiftLink />,
+    // },
   ];
 
   return (
